@@ -34,9 +34,24 @@ body {
     display: none;
   }
   
+  #pokeball-container{
+    position: relative;
+  }
+
+  #pokeball-image{
+    position: relative;
+    z-index: 0;
+    width: 150px;
+    height: 150px;
+    padding: 10px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+  }
+
   #pokemon-image {
     width: 200px;
     height: 200px;
     margin-bottom: 10px;
   }
+  
   

@@ -19,16 +19,35 @@ document.getElementById('search-button').addEventListener('click', function() {
         alert('Pokemon não encontrado!');
       });
   });
+
   
   function displayPokemonInfo(pokemon) {
-    var pokemonNameDisplay = document.getElementById('pokemon-name-display');
-    var pokemonImage = document.getElementById('pokemon-image');
-    var pokemonNumber = document.getElementById('pokemon-number');
-  
-    pokemonNameDisplay.textContent = pokemon.name;
+    //var pokemonImage = document.getElementById('pokemon-image');
+
     pokemonImage.src = pokemon.sprites.front_default;
-    pokemonNumber.textContent = 'Pokédex #: ' + pokemon.id;
-  
+    pokemonName = pokemon.name;
+    pokemonID = pokemon.id;
+
     document.getElementById('pokemon-info').classList.remove('hidden');
   }
   
+  var pokeballImage = document.getElementById('pokeball-image');
+  var pokemonImage = document.getElementById('pokemon-image');
+
+  var pokemonName;
+  var pokemonID;
+
+  pokeballImage.addEventListener('click', function() {
+    var pokemonNameDisplay = document.getElementById('pokemon-name-display');
+    var pokemonNumber = document.getElementById('pokemon-number');
+
+    pokeballImage.style.position = 'absolute';
+    pokeballImage.style.zIndex = -1;
+
+    pokemonImage.classList.toggle('hidden');
+    
+    pokemonNameDisplay.textContent = pokemonName;
+    pokemonNumber.textContent = 'Pokédex #: ' + pokemonID;
+
+
+  });
